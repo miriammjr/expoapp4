@@ -1,5 +1,6 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Fab, FabIcon, FabLabel } from "@/components/ui/fab";
 import { useRouter } from "expo-router";
 import { useState } from 'react';
 import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
@@ -68,6 +69,11 @@ export default function HomeScreen() {
             </ThemedView>
           )}
         />
+      <Fab>
+        <FabLabel>Add</FabLabel>
+        <FabIcon />
+      </Fab>
+        
       </ThemedView>
     </ScrollView>
   );
