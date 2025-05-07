@@ -2,7 +2,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useAnimalContext } from '@/components/ui/ContextProvider';
 import { useRouter } from "expo-router";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
 // import animals from "../../../data/animals.json";
 
@@ -41,6 +41,10 @@ export default function HomeScreen() {
       params: {name: name, link: link, animal: animal},
     })
   }
+
+  useEffect(() => {
+    setFilteredStuff(animals);
+  }, [animals]);
 
   return (
     
