@@ -6,6 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
+
+import { Fab, FabLabel } from '@/components/ui/fab';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -33,6 +35,10 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
+      <Fab>
+        <FabLabel>Add</FabLabel>
+      </Fab>
     </ThemeProvider>
+    
   );
 }

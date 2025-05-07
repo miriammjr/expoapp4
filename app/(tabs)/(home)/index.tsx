@@ -44,18 +44,23 @@ export default function HomeScreen() {
   return (
     
     <ScrollView style={styles.all}>
+
       <ThemedView style={styles.titleContainer}>
         <ThemedText style={styles.title}>Animals</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
+
       <TextInput style={styles.input}
+         placeholder="I don't know why it's invisible but here's the search bar"
         value={searchStuff}
         onChangeText={changeText}
+        
       />
       <Button
         title="Submit"
         onPress={() => searchAnimals()}
       />
+
         <FlatList
           data = {filteredStuff}
           keyExtractor = {(item) => item.name}
@@ -69,10 +74,7 @@ export default function HomeScreen() {
             </ThemedView>
           )}
         />
-      <Fab>
-        <FabLabel>Add</FabLabel>
-        <FabIcon />
-      </Fab>
+
         
       </ThemedView>
     </ScrollView>
@@ -81,13 +83,13 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   all: {
-    backgroundColor: '#000000',
+    backgroundColor: 'black',
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
   },
   title: {
-    color: 'white',
+    color: 'black',
     fontSize: 30,
     paddingTop: 30,
     textAlign: 'center',
@@ -115,11 +117,12 @@ const styles = StyleSheet.create({
 
   item: {
     fontSize: 20,
-    color:'#ffffff',
+    color:'black',
     textAlign: 'center',
   },
   input: {
     backgroundColor: '#ffffff',
-    color: '#000000'
+    color: '#000000',
+    borderColor: 'black',
   }
 });

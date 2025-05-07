@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
     },
     title: {
-      color: 'white',
+      color: 'black',
       fontSize: 30,
       paddingTop: 30,
       textAlign: 'center',
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   
     item: {
       fontSize: 20,
-      color:'#ffffff',
+      color:'black',
       textAlign: 'center',
     },
     input: {
