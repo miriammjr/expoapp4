@@ -1,5 +1,7 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useAnimalContext } from '@/components/ui/ContextProvider';
+import { useNavigation } from 'expo-router';
 import { Formik } from 'formik';
 import React from 'react';
 import { Button, Text, TextInput } from 'react-native';
@@ -10,7 +12,9 @@ let animalSchema = object({
     animal: string().required("Animal is required."),
 });
 
-export default function AddAnimal() {
+export default function AddNewAnimal() {
+    const nav = useNavigation();
+    const {addAnimal} = useAnimalContext();
     return (
         
         <ThemedView>
@@ -22,9 +26,17 @@ export default function AddAnimal() {
                 }}
                 validationSchema = {animalSchema}
                 // onSubmit = {(values) => console.log(values)}
-                onSubmit = {(values) => {
-                    console.log(values);
+                onSubmit = {(values, {resetForm}) => {
+                    addAnimal({
+                        name: values.name,
+                        animal: values.animal,
+                        link: values.name
+                    });
+                    console.log(values)
+                    resetForm();
+                    nav.goBack();
                 }}
+                
             >
 
                 {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
@@ -39,6 +51,7 @@ export default function AddAnimal() {
                         </TextInput>
                         {errors.name && touched.name && <Text>{errors.name}</Text>}
                         <Text>Animal</Text>
+
                         <TextInput 
                             id="animal"
                             placeholder="Enter animal type here" 

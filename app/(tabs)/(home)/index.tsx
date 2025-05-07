@@ -1,6 +1,5 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Fab, FabIcon, FabLabel } from "@/components/ui/fab";
 import { useRouter } from "expo-router";
 import { useState } from 'react';
 import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
