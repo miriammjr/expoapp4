@@ -73,3 +73,5 @@ export default function AddNewAnimal() {
         </ThemedView>
     )
 }
+
+

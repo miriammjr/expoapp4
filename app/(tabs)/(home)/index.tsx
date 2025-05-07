@@ -1,30 +1,32 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useAnimalContext } from '@/components/ui/ContextProvider';
 import { useRouter } from "expo-router";
 import { useState } from 'react';
 import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
-import animals from "../../../data/animals.json";
+// import animals from "../../../data/animals.json";
 
-const liststuff = animals;
+
 
 
 export default function HomeScreen() {
+  const {animals} = useAnimalContext();
   const [searchStuff, setSearchStuff] = useState('');
-  const [filteredStuff, setFilteredStuff] = useState(liststuff);
+  const [filteredStuff, setFilteredStuff] = useState(animals);
   const router = useRouter();
 
   const searchAnimals = () => {
     
     const input = searchStuff;
     if (input.length > 0) {
-      const filtered = liststuff.filter((item) =>
+      const filtered = animals.filter((item) =>
         item.name.toLowerCase().startsWith(input.toLowerCase()) ||  
         item.animal === input.toLowerCase());
       setFilteredStuff(filtered);
       
     }
     else {
-      setFilteredStuff(liststuff);
+      setFilteredStuff(animals);
     } 
 
     

@@ -25,7 +25,7 @@ export const AnimalProvider: React.FC<{ children: React.ReactNode }> = ({childre
     };
 
     return (
-        <AnimalContext.Provider value={{animals, addAnimal}}>
+        <AnimalContext.Provider value={{ animals, addAnimal }}>
             {children}
         </AnimalContext.Provider>
     );
