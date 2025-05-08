@@ -2,7 +2,6 @@ import { createContext, useContext, useState } from "react";
 import animalData from "../../../data/animals.json";
 
 export type Animal = {
-
     name: string;
     animal: string;
     link: string;
@@ -12,6 +11,7 @@ export type Animal = {
 type AnimalContextType = {
     animals: Animal[];
     addAnimal: (animal: Animal) => void;
+    makeNoise: (animal: Animal) => string;
 }
 
 const AnimalContext = createContext<AnimalContextType | undefined>(undefined);
@@ -24,8 +24,23 @@ export const AnimalProvider: React.FC<{ children: React.ReactNode }> = ({childre
         setAnimals((prev) => [...prev, animal]);
     };
 
+    const makeNoise = (animal: Animal) => {
+        if (animal.animal == "cat") {
+            return "meow";
+        }
+        else if (animal.animal == "dog") {
+            return "woof";
+        }
+        else if (animal.animal == "fish") {
+            return "blub";
+        }
+        else {
+            return `vague ${animal.animal} noises`
+        }
+    };
+
     return (
-        <AnimalContext.Provider value={{ animals, addAnimal }}>
+        <AnimalContext.Provider value={{ animals, addAnimal, makeNoise }}>
             {children}
         </AnimalContext.Provider>
     );

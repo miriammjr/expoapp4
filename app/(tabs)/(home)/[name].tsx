@@ -1,5 +1,6 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useAnimalContext } from '@/components/ui/ContextProvider';
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Button, ScrollView, StyleSheet } from 'react-native';
 
@@ -8,14 +9,18 @@ export default function DetailsScreen() {
     const router = useRouter();
     const {name} = useLocalSearchParams<{name: string}>();
     const {animal} = useLocalSearchParams<{animal: string}>();
+    const {animals} = useAnimalContext();
 
     return (
         <ScrollView>
             <ThemedView style={styles.titleContainer}>
                 <ThemedText style={styles.title}>{name}</ThemedText>                     
             </ThemedView>
-            <ThemedView style={styles.stepContainer}>
-            <ThemedText style={styles.item}>This is a {animal}</ThemedText>
+              <ThemedView style={styles.stepContainer}>
+              <ThemedText style={styles.item}>This is a {animal}</ThemedText>
+              {/* <Button
+                title="make noise"
+              /> */}
             </ThemedView>
             <Button
                 title="Back"
