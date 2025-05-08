@@ -30,15 +30,17 @@ export default function RootLayout() {
   }
 
   return (
-    <GluestackUIProvider mode="light"><ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <GluestackUIProvider mode="light">
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <AnimalProvider>
         <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="+not-found" />
+            <Stack.Screen name="(home)" options={{ headerShown: false }} />
+            <Stack.Screen name="index" />
           </Stack>
           <StatusBar style="auto" />
       </AnimalProvider>
 
-      </ThemeProvider></GluestackUIProvider>
+      </ThemeProvider>
+      </GluestackUIProvider>
   );
 }
