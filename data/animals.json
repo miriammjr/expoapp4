@@ -1,63 +1,62 @@
 [
-    {
-      "name": "Fluffy",
-      "animal": "cat",
-      "link": "fluffy"
-    },
-    {
-      "name": "Whiskers",
-      "animal": "cat",
-      "link": "whiskers"
-    },
-    {
-      "name": "Rex",
-      "animal": "dog",
-      "link": "rex"
-    },
-    {
-      "name": "Bark",
-      "animal": "dog",
-      "link": "bark"
-    },
-    {
-      "name": "Hop",
-      "animal": "bunny",
-      "link": "hop"
-    },
-    {
-      "name": "Easter",
-      "animal": "bunny",
-      "link": "easter"
-    },
-    {
-      "name": "Blub",
-      "animal": "fish",
-      "link": "blub"
-    },
-    {
-      "name": "Swimmy",
-      "animal": "fish",
-      "link": "swimmy"
-    },
-    {
-      "name": "Meow",
-      "animal": "cat",
-      "link": "meow"
-    },
-    {
-      "name": "Floofy",
-      "animal": "cat",
-      "link": "floofy"
-    },
-    {
-      "name": "Woof",
-      "animal": "dog",
-      "link": "woof"
-    },
-    {
-      "name": "Luna",
-      "animal": "dog",
-      "link": "luna"
-    }
-  
-  ]
+  {
+    "name": "Fluffy",
+    "animal": "cat",
+    "link": "fluffy"
+  },
+  {
+    "name": "Whiskers",
+    "animal": "cat",
+    "link": "whiskers"
+  },
+  {
+    "name": "Rex",
+    "animal": "dog",
+    "link": "rex"
+  },
+  {
+    "name": "Bark",
+    "animal": "dog",
+    "link": "bark"
+  },
+  {
+    "name": "Hop",
+    "animal": "bunny",
+    "link": "hop"
+  },
+  {
+    "name": "Easter",
+    "animal": "bunny",
+    "link": "easter"
+  },
+  {
+    "name": "Blub",
+    "animal": "fish",
+    "link": "blub"
+  },
+  {
+    "name": "Swimmy",
+    "animal": "fish",
+    "link": "swimmy"
+  },
+  {
+    "name": "Meow",
+    "animal": "cat",
+    "link": "meow"
+  },
+  {
+    "name": "Floofy",
+    "animal": "cat",
+    "link": "floofy"
+  },
+  {
+    "name": "Woof",
+    "animal": "dog",
+    "link": "woof"
+  },
+  {
+    "name": "Luna",
+    "animal": "dog",
+    "link": "luna"
+  }
+]
