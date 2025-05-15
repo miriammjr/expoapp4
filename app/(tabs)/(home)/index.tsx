@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
+    paddingBottom: 50,
   },
   title: {
     color: 'black',
