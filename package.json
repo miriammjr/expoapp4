@@ -10,7 +10,7 @@
     "web": "DARK_MODE=media expo start --web",
     "prepare": "husky",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
