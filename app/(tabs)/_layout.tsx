@@ -1,5 +1,4 @@
-import { Fab, FabLabel } from "@/components/ui/fab";
-import { router, Tabs } from "expo-router";
+import { Tabs } from "expo-router";
 
 export default function TabLayou() {
   return (
@@ -10,9 +9,6 @@ export default function TabLayou() {
           title: "Home",
         }}
       />
-      <Fab onPress={() => router.navigate("/add-animal")}>
-        <FabLabel>Add</FabLabel>
-      </Fab>
     </Tabs>
   );
 }

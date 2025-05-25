@@ -53,8 +53,14 @@ export default function RootLayout() {
         >
           <AnimalProvider>
             <Stack>
-              <Stack.Screen name="(home)" options={{ headerShown: false }} />
-              <Stack.Screen name="index" options={{ headerShown: false }} />
+              <Stack.Screen
+                name="(home)"
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="index"
+                options={{ headerShown: false }}
+              />
             </Stack>
             <StatusBar style="auto" />
           </AnimalProvider>
