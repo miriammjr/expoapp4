@@ -62,7 +62,6 @@ describe("HomeScreen", () => {
 });
 
 test("checks if submit button exists", () => {
-  const mockButton = jest.fn();
   render(
     <QueryClientProvider client={new QueryClient()}>
       <AnimalProvider>
