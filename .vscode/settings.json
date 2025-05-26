@@ -3,5 +3,10 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
-  }
+    {
+  "eslint.workingDirectories": [
+    "./{PATH_TO_CLIENT}" // replace {PATH_TO_CLIENT} with your own path
+  ]
+}
+  },
 }

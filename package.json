@@ -10,7 +10,7 @@
     "web": "DARK_MODE=media expo start --web",
     "prepare": "husky",
     "lint": "eslint .",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests --detectOpenHandles --forceExit"
   },
   "jest": {
     "preset": "jest-expo",
