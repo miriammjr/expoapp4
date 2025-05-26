@@ -58,9 +58,14 @@ export default function HomeScreen() {
           value={searchStuff}
           onChangeText={changeText}
         />
-        <Button title="Submit" onPress={() => searchAnimals()} />
+        <Button
+          data-testid="Submit"
+          title="Submit"
+          onPress={() => searchAnimals()}
+        />
 
         <FlatList
+          data-testid="List"
           data={filteredStuff}
           keyExtractor={(item) => item.name}
           renderItem={({ item }) => (

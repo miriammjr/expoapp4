@@ -12,6 +12,15 @@
     "lint": "eslint .",
     "test": "jest --passWithNoTests"
   },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg|@gluestack-ui/.*))"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
     "@gluestack-ui/fab": "^0.1.28",
@@ -19,7 +28,7 @@
     "@gluestack-ui/nativewind-utils": "^1.0.26",
     "@gluestack-ui/overlay": "^0.1.22",
     "@gluestack-ui/toast": "^1.0.9",
-    "@react-native-async-storage/async-storage": "2.1.2",
+    "@react-native-async-storage/async-storage": "^2.1.2",
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
     "@react-navigation/native": "^7.1.6",
@@ -40,7 +49,6 @@
     "expo-system-ui": "~5.0.7",
     "expo-web-browser": "~14.1.6",
     "formik": "^2.4.6",
-    "jest": "^29.7.0",
     "nativewind": "^4.1.23",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -59,11 +67,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react-native": "^13.2.0",
+    "@types/jest": "^29.5.14",
     "@types/react": "~19.0.10",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~9.2.0",
     "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "jest-expo": "~53.0.5",
     "jscodeshift": "^0.15.2",
     "typescript": "~5.8.3"
   },
