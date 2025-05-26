@@ -1,7 +1,12 @@
 import HomeScreen from "@/app/(tabs)/(home)";
 import { describe, expect, test } from "@jest/globals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { render, screen, waitFor } from "@testing-library/react-native";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react-native";
 import { AnimalProvider } from "../ui/ContextProvider";
 
 test("it won't let me commit unrelated files without this", () => {
@@ -87,7 +92,28 @@ test("checks if list exists", async () => {
   });
 });
 
-// test("checks if searching for something exists works", async () => {
+test("checks if searching for something that exists works", async () => {
+  render(
+    <QueryClientProvider client={new QueryClient()}>
+      <AnimalProvider>
+        <HomeScreen></HomeScreen>
+      </AnimalProvider>
+    </QueryClientProvider>
+  );
+
+  fireEvent.changeText(
+    screen.getByPlaceholderText(
+      "I don't know why it's invisible but here's the search bar"
+    ),
+    "Fluffy"
+  );
+  fireEvent.press(screen.getByText("Submit"));
+  await waitFor(() => {
+    expect(screen.getByText("Fluffy")).toBeTruthy();
+  });
+});
+
+// test("making sure im not dumb", async () => {
 //   render(
 //     <QueryClientProvider client={new QueryClient()}>
 //       <AnimalProvider>
@@ -96,11 +122,79 @@ test("checks if list exists", async () => {
 //     </QueryClientProvider>
 //   );
 
-//   await waitFor(() => {
-//     const submitBar = screen.getByPlaceholderText(
+//   fireEvent.changeText(
+//     screen.getByPlaceholderText(
 //       "I don't know why it's invisible but here's the search bar"
-//     );
-//     fireEvent.press(screen.getByText("Submit"));
-//     expect(screen.getByText(submitBar)).toBeTruthy();
+//     ),
+//     "Fluffy"
+//   );
+//   fireEvent.press(screen.getByText("Submit"));
+//   await waitFor(() => {
+//     expect(screen.getByText("asdfhasjkfhasdjhfajkshef")).toBeTruthy();
 //   });
 // });
+
+test("checks if searching for something that doesn't exist works", async () => {
+  render(
+    <QueryClientProvider client={new QueryClient()}>
+      <AnimalProvider>
+        <HomeScreen></HomeScreen>
+      </AnimalProvider>
+    </QueryClientProvider>
+  );
+
+  fireEvent.changeText(
+    screen.getByPlaceholderText(
+      "I don't know why it's invisible but here's the search bar"
+    ),
+    "Fluffy"
+  );
+  fireEvent.press(screen.getByText("Submit"));
+  await waitFor(() => {
+    expect(() => screen.getByText("Swimmy")).toThrow();
+  });
+});
+
+test("tests if searching for cat leads to cats", async () => {
+  render(
+    <QueryClientProvider client={new QueryClient()}>
+      <AnimalProvider>
+        <HomeScreen></HomeScreen>
+      </AnimalProvider>
+    </QueryClientProvider>
+  );
+
+  fireEvent.changeText(
+    screen.getByPlaceholderText(
+      "I don't know why it's invisible but here's the search bar"
+    ),
+    "cat"
+  );
+  fireEvent.press(screen.getByText("Submit"));
+  await waitFor(() => {
+    expect(screen.getByText("Fluffy")).toBeTruthy();
+    expect(screen.getByText("Whiskers")).toBeTruthy();
+  });
+});
+
+test("tests if searching for cat leads to others not showing up", async () => {
+  render(
+    <QueryClientProvider client={new QueryClient()}>
+      <AnimalProvider>
+        <HomeScreen></HomeScreen>
+      </AnimalProvider>
+    </QueryClientProvider>
+  );
+
+  fireEvent.changeText(
+    screen.getByPlaceholderText(
+      "I don't know why it's invisible but here's the search bar"
+    ),
+    "cat"
+  );
+  fireEvent.press(screen.getByText("Submit"));
+  await waitFor(() => {
+    expect(() => screen.getByText("Swimmy")).toThrow();
+    expect(() => screen.getByText("Rex")).toThrow();
+  });
+});
