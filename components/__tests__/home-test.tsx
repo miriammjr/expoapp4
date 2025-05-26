@@ -87,3 +87,21 @@ test("checks if list exists", async () => {
     expect(screen.getByText("Fluffy")).toBeTruthy();
   });
 });
+
+// test("checks if searching for something exists works", async () => {
+//   render(
+//     <QueryClientProvider client={new QueryClient()}>
+//       <AnimalProvider>
+//         <HomeScreen></HomeScreen>
+//       </AnimalProvider>
+//     </QueryClientProvider>
+//   );
+
+//   await waitFor(() => {
+//     const submitBar = screen.getByPlaceholderText(
+//       "I don't know why it's invisible but here's the search bar"
+//     );
+//     fireEvent.press(screen.getByText("Submit"));
+//     expect(screen.getByText(submitBar)).toBeTruthy();
+//   });
+// });
